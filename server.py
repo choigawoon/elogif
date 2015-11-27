@@ -21,7 +21,7 @@ application = tornado.web.Application([
     (r"/api/refresh", handlers.ApiRefresh),
     (r"/gif/(.*)", tornado.web.StaticFileHandler, {"path": settings.GIF_PATH}),
     (r"/(.*)", tornado.web.StaticFileHandler, {"path": '{}/static'.format(root), "default_filename": "index.html"})
-],debug=True,template_path="{}/templates/".format(root))
+],debug=settings.DEBUG_MODE,template_path="{}/templates/".format(root))
 application.clients = []
 
 def sig_handler(sig, frame):
