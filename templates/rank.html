@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="splash-container" style="align:center">
+    <div class="splash" style="align:center;width:100%">
+        <h3>{{nb_votes}} Votes</h3>
+    </div>
+    {% for idx, r in enumerate(rank)%}
+    <div class="splashrank" style="align:center;width:100%">
+      <h1>#{{idx}}</h1> 
+	<h3>(Score : {{r[1]}})</h3>
+      <img src="/gif/{{r[0]}}"/>  
+  </div>
+  {%end%}
+  {% end %}

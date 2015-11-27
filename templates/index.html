@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block header %}
+ <script type="text/javascript">
+            document.onkeydown = checkKey;
+
+            function checkKey(e) {
+
+                e = e || window.event;
+
+                if (e.keyCode == '38') {
+                  window.location.href ="/?gif_right={{gif_right['name']}}&gif_left={{gif_left['name']}}&action=draw&key={{vote_id}}"
+              }
+            
+                    else if (e.keyCode == '37') {
+                       // left arrow
+                       window.location.href ="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=win&key={{vote_id}}"
+                   }
+                   else if (e.keyCode == '39') {
+                       // right arrow
+                       window.location.href ="/?gif_left={{gif_right['name']}}&gif_right={{gif_left['name']}}&action=win&key={{vote_id}}" 
+                   }
+
+               }
+           </script>
+{% end %}
+{% block content %}
+<div class="splash-container">
+
+    <div class="splash">
+        <a style="margin:auto;"  href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=win&key={{vote_id}}" ><img style="margin:auto;"  src="/gif/{{gif_left['name']}}"/></a>
+   
+       
+    </div>
+
+     <div class="splash">
+       <a style="margin:auto;"  href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=loose&key={{vote_id}}" > <img style="margin:auto;" src="/gif/{{gif_right['name']}}"/> </a>
+      
+       
+    </div>
+    <div class="splash" style="width:100%">
+    <a href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=draw&key={{vote_id}}"  class="splash-subhead">Draw !</a><br/><br/>
+    </div>
+</div>
+{% end %}
