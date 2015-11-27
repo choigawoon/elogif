@@ -1,6 +1,6 @@
 # Elogif
 
-Sort gif
+Collaborative gif ranking based on the Elo ranking method.
 
 # Usage
 Select the gif you prefer by clicking on it or use the arrow on your keyboard (Left,Right to choose a winner, Up to declare a draw).
@@ -20,7 +20,7 @@ Modifiy settings.py or create environement variables.
 | REDIS_ZNAME   | ELOGIF_REDIS_ZNAME|   'elo-gif' | Hash id for score storage|
 
 
-## Requierments
+## Requirements
 
 `
 pip install -r req.txt
