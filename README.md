@@ -37,9 +37,9 @@ python server.py
 ## Quick run
 
 ```
-docker run --name elogif_redis -v /home/benco/elogif/data:/data -d redis redis-server --appendonly yes
+docker run --name elogif_redis -v /host/dir/data:/data -d redis redis-server --appendonly yes
 
-docker run -p 55555:5555 --name elogif_backend --link elogif_redis:redis -e ELOGIF_REDIS_HOST=redis -v /home/benco/elogif/gif:/srv/gif -d totetmatt/elogif
+docker run -p 80:5555 --name elogif_backend --link elogif_redis:redis -e ELOGIF_REDIS_HOST=redis -v /home/benco/elogif/gif:/srv/gif -d totetmatt/elogif
 ```
 ## Build
 `docker build -t <imagename> .`
