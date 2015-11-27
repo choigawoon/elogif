@@ -2,6 +2,9 @@
 
 Sort gif
 
+# Usage
+Select the gif you prefer by clicking on it or use the arrow on your keyboard (Left,Right to choose a winner, Up to declare a draw).
+
 # Setup
 
 ## Configuration
@@ -18,7 +21,7 @@ Modifiy settings.py or create environement variables.
 
 
 ## Requierments
-Elogif need a Redis database
+
 `
 pip install -r req.txt
 `
@@ -41,5 +44,3 @@ docker run -p 55555:5555 --name elogif_backend --link elogif_redis:redis -e ELOG
 ## Build
 `docker build -t <imagename> .`
 
-# Usage
-Select the gif you prefer by clicking on it or use the arrow on your keyboard (Left,Right to choose a winner, Up to declare a draw).
