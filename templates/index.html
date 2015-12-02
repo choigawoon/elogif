@@ -24,21 +24,40 @@
            </script>
 {% end %}
 {% block content %}
-<div class="splash-container">
+<div id="main-wrapper">
+                    <section id="main_left">
+                        <header>
+                            <span class="avatar">
+                              <a style="margin:auto;"  href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=win&key={{vote_id}}" >
+                              <img src="/gif/{{gif_left['name']}}" alt="" />
+                              </a>
+                            </span>
+                        </header>
+                        
+                       
+                    </section>
+                    <section id="main">
+                        <header>
+                     
+                        
+                            <h1> <a href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=draw&key={{vote_id}}"  class="splash-subhead">Draw Match!</a></h1>
 
-    <div class="splash">
-        <a style="margin:auto;"  href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=win&key={{vote_id}}" ><img style="margin:auto;"  src="/gif/{{gif_left['name']}}"/></a>
-   
-       
-    </div>
+                        </header>
+                    <footer>
+                        <a href="/rank">Ranking</a>
+                    </footer>
+                       
+                    </section>
+                    <section id="main_right">
+                        <header>
+                            <span class="avatar">
+ <a style="margin:auto;"  href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=loose&key={{vote_id}}" > 
+  <img src="/gif/{{gif_right['name']}}" alt="" /></a></span>
+                       
+                        </header>
+                        
+                    
+                    </section>
+                </div>
 
-     <div class="splash">
-       <a style="margin:auto;"  href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=loose&key={{vote_id}}" > <img style="margin:auto;" src="/gif/{{gif_right['name']}}"/> </a>
-      
-       
-    </div>
-    <div class="splash" style="width:100%">
-    <a href="/?gif_left={{gif_left['name']}}&gif_right={{gif_right['name']}}&action=draw&key={{vote_id}}"  class="splash-subhead">Draw !</a><br/><br/>
-    </div>
-</div>
 {% end %}

@@ -1,47 +1,51 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Elogif :: Collaboartive Gif Ranking">
-    <title>EloGif</title>
-    
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-<!--[if lte IE 8]>
-  
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
-  
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
+<!DOCTYPE HTML>
+<!--
+    Identity by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Elogif</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
-
-    <!--<![endif]-->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
-        <![endif]-->
-        <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/layouts/marketing.css">
-        <!--<![endif]--> 
-         {% block header %}
+        {% block header %}
         
         {% end %}
-       
-       </head>
-       <body>
-        <div class="header">
-            <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-                <a class="pure-menu-heading" href="/">Elo-Gif</a>
-                <ul>
-                    <li><a href="/rank">Rank</a></li>
-                </ul>
+    </head>
+    <body class="is-loading">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+   {% block content %}
+        
+        {% end %}
+                <!-- Main -->
+                
+                <!-- Footer -->
+                    <footer id="footer">
+                        <ul class="copyright">
+                            <li>&copy; Elogif</li>
+                            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </footer>
 
             </div>
-        </div>
-        {% block content %}
-        
-        {% end %}
+
+        <!-- Scripts -->
+            <!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+            <script>
+                if ('addEventListener' in window) {
+                    window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+                    document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+                }
+            </script>
+
     </body>
-    </html>
+</html>
