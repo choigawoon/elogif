@@ -28,14 +28,14 @@ class Rank(tornado.web.RequestHandler):
 class ApiRandom(tornado.web.RequestHandler):
     def get(self):
             rank = elogif.app.random_pick()
-            rank["path"]="http://{hostname}/gif/{name}".format(hostname=self.request.host,name=rank['name'])
+            rank["path"]="http://{hostname}/gif/{name}".format(hostname=self.request.headers.get("host"),name=rank['name'])
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(rank))
 
 class ApiTop(tornado.web.RequestHandler):
     def get(self,top=10):
             rank = elogif.app.random_pick(top_limit=int(top))
-            rank["path"]="http://{hostname}/gif/{name}".format(hostname=self.request.host,name=rank['name'])
+            rank["path"]="http://{hostname}/gif/{name}".format(hostname=self.request.headers.get("host"),name=rank['name'])
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(rank))
 
